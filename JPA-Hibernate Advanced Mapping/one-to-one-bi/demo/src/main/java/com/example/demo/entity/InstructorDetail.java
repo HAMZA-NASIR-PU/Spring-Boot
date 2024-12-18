@@ -18,12 +18,13 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
-    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL) // mapped By tells Hibernate to look at instructorDetail property in the Instructor class
-    private Instructor instructor;
-
     public InstructorDetail() {
 
     }
+
+    @OneToOne(mappedBy = "instructorDetail", cascade =
+            {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}) // mapped By tells Hibernate to look at instructorDetail property in the Instructor class
+    private Instructor instructor;
 
     public InstructorDetail(String youtubeChannel, String hobby) {
         this.youtubeChannel = youtubeChannel;

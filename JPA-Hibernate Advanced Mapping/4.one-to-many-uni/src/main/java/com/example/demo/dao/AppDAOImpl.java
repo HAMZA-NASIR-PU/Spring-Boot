@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Instructor;
 import com.example.demo.entity.InstructorDetail;
+import com.example.demo.entity.Review;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
@@ -146,5 +147,24 @@ public class AppDAOImpl implements AppDAO{
 
         // delete the course
         this.entityManager.remove(tempCourse);
+    }
+
+    @Override
+    @Transactional
+    public void save(Course course) {
+        // will save the course and associated reviews due to CascadeType.ALL
+        this.entityManager.persist(course);
+    }
+
+    @Override
+    @Transactional
+    public void addReviewOfCourse(Review review, int courseId) {
+        // find the course
+        TypedQuery<Course> query = this.entityManager.createQuery("SELECT c FROM Course c WHERE c.id = :id", Course.class);
+        query.setParameter("id", courseId);
+        Course course = query.getSingleResult();
+//        course.addReview(review);  // 4 queries
+        review.setCourse(course);  // Only 2 queries
+        this.entityManager.persist(review);
     }
 }

@@ -4,6 +4,7 @@ import com.example.demo.dao.AppDAO;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Instructor;
 import com.example.demo.entity.InstructorDetail;
+import com.example.demo.entity.Review;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +26,7 @@ public class DemoApplication {
 		return runner -> {
 //			createInstructor(appDAO);
 
-			findInstructor(appDAO);
+//			findInstructor(appDAO);
 
 //			deleteInstructor(appDAO);
 
@@ -50,7 +51,32 @@ public class DemoApplication {
 //			associateCoursesWithInstructor(appDAO);
 
 //			deleteCourse(appDAO);
+
+//			createCourseAndReview(appDAO);
+
+			addReviewOfCourse(appDAO);
 		};
+	}
+
+	private void addReviewOfCourse(AppDAO appDAO) {
+		int courseId = 10;
+		Review review = new Review("T 1");
+		appDAO.addReviewOfCourse(review, courseId);
+	}
+
+	private void createCourseAndReview(AppDAO appDAO) {
+
+		// create the course
+		Course tempCourse = new Course("TEST 1");
+
+		// add some reviews
+		tempCourse.addReview(new Review("Rev 1"));
+		tempCourse.addReview(new Review("Rev 2"));
+		tempCourse.addReview(new Review("Rev 3"));
+
+		// Save the course
+		appDAO.save(tempCourse);
+		System.out.println("DONE!");
 	}
 
 	private void deleteCourse(AppDAO appDAO) {

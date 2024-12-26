@@ -19,8 +19,8 @@ public class Member {
     @JoinColumn(name = "library_id")
     private Library library;
 
-//    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
-//    private List<BorrowTransaction> borrowTransactions;
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<BorrowTransaction> borrowTransactions;
 
     public Member() {
     }
@@ -73,12 +73,12 @@ public class Member {
         this.library = library;
     }
 
-//    public List<BorrowTransaction> getBorrowTransactions() {
-//        return borrowTransactions;
-//    }
-//
-//    public void setBorrowTransactions(List<BorrowTransaction> borrowTransactions) {
-//        this.borrowTransactions = borrowTransactions;
-//    }
+    public List<BorrowTransaction> getBorrowTransactions() {
+        return borrowTransactions;
+    }
+
+    public void setBorrowTransactions(List<BorrowTransaction> borrowTransactions) {
+        this.borrowTransactions = borrowTransactions;
+    }
 }
 

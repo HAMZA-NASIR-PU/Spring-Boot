@@ -12,6 +12,10 @@ public class BorrowTransaction {
 
     private LocalDate borrowDate;
     private LocalDate returnDate;
+    private LocalDate actualReturnDate;
+
+    private boolean isReturned;
+    private long fineAmount;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
@@ -62,6 +66,30 @@ public class BorrowTransaction {
 
     public void setMember(Member member) {
         this.member = member;
+    }
+
+    public LocalDate getActualReturnDate() {
+        return actualReturnDate;
+    }
+
+    public void setActualReturnDate(LocalDate actualReturnDate) {
+        this.actualReturnDate = actualReturnDate;
+    }
+
+    public boolean isReturned() {
+        return isReturned;
+    }
+
+    public void setReturned(boolean returned) {
+        isReturned = returned;
+    }
+
+    public long getFineAmount() {
+        return fineAmount;
+    }
+
+    public void setFineAmount(long fineAmount) {
+        this.fineAmount = fineAmount;
     }
 }
 

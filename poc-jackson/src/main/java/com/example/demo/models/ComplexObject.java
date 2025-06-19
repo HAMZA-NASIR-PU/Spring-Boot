@@ -16,6 +16,7 @@ public class ComplexObject {
     private Map<String, String> metadata;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "UTC")
     private Instant eventTime;
+    private List<Contact> contacts;
 
     public String getName() {
         return name;
@@ -64,6 +65,36 @@ public class ComplexObject {
 
     public void setEventTime(Instant eventTime) {
         this.eventTime = eventTime;
+    }
+
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
+    public static class Contact {
+        private String name;
+        private String relationship;
+
+        // Getters and Setters
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getRelationship() {
+            return relationship;
+        }
+
+        public void setRelationship(String relationship) {
+            this.relationship = relationship;
+        }
     }
 
     public static class Address {

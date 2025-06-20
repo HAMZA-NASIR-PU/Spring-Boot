@@ -1,5 +1,7 @@
-package com.security.test.MyFiles;
+package com.security.test.services;
 
+import com.security.test.repositories.UserRepository;
+import com.security.test.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

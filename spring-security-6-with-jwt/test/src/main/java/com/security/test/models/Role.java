@@ -1,4 +1,4 @@
-package com.security.test.MyFiles;
+package com.security.test.models;
 
 import jakarta.persistence.*;
 import lombok.Data;

@@ -1,5 +1,6 @@
-package com.security.test.MyFiles;
+package com.security.test.repositories;
 
+import com.security.test.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

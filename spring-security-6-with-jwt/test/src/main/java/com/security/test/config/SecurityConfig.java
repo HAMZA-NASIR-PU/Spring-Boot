@@ -1,5 +1,7 @@
-package com.security.test.MyFiles;
+package com.security.test.config;
 
+import com.security.test.config.jwt.JwtAuthenticationEntryPoint;
+import com.security.test.config.jwt.JwtAuthenticationFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;

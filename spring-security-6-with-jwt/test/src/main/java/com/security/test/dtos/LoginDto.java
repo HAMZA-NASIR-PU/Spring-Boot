@@ -1,4 +1,4 @@
-package com.security.test.MyFiles;
+package com.security.test.dtos;
 
 import lombok.Data;
 

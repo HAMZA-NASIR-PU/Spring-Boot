@@ -1,4 +1,4 @@
-package com.security.test.MyFiles;
+package com.security.test.config.jwt;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,5 +1,8 @@
-package com.security.test.MyFiles;
+package com.security.test.controllers;
 
+import com.security.test.dtos.AuthResponseDto;
+import com.security.test.services.AuthService;
+import com.security.test.dtos.LoginDto;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
